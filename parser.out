@@ -1,0 +1,47 @@
+Created by PLY version 3.10 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> match
+Rule 1     match -> MATCH ID
+
+Terminals, with rules where they appear
+
+ID                   : 1
+MATCH                : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+match                : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . match
+    (1) match -> . MATCH ID
+
+    MATCH           shift and go to state 2
+
+    match                          shift and go to state 1
+
+state 1
+
+    (0) S' -> match .
+
+
+
+state 2
+
+    (1) match -> MATCH . ID
+
+    ID              shift and go to state 3
+
+
+state 3
+
+    (1) match -> MATCH ID .
+
+    $end            reduce using rule 1 (match -> MATCH ID .)
+
